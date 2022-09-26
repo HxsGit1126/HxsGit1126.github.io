@@ -1,0 +1,1152 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: 1px solid black; 布局页面辅助*/
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    min-width: 1000px;
+    height: 100vh;
+    background-image: url("./img/background.jpg");
+    background-repeat: no-repeat;
+    /* 背景图片覆盖满页面 */
+    background-size: cover;
+}
+
+/* 网页布局 */
+.content{
+    display: flex;
+    /* vh 是view height 既视窗高度的意思，100就是100%占满窗口高度 */
+    height: 100vh;
+    /* flex-direction: row; 默认按行分布*/
+    opacity: 1;/*网页全部属性的不透明度*/
+}
+
+
+/* 侧边栏 */
+aside{
+    /* width: 100%;
+    height: 100vh; */
+    /* background: url(../img/bizhi\ \(1\).jpg) center;
+    background-repeat: no-repeat; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    color: rgba(255, 255, 255, 0.6);
+    background-size: cover;
+    opacity: 0.9;
+}
+.nav{
+    width: 92px;
+    height: 100vh;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.nav:hover{
+    width: 240px;
+}
+
+/* 三个不同颜色的小按钮 */
+/* .btn{
+    width: 60px;
+    height: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.btn-item{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.btn-item:nth-child(1){
+    background-color: red;
+}
+.btn-item:nth-child(2){
+    background-color: green;
+}
+.btn-item:nth-child(3){
+    background-color: blue;
+} */
+
+/* 头像区域 */
+.icon{
+    width: 250px;
+    height: 60px;
+    margin-left: 12px;
+    margin-top: 20px;
+    display: flex;
+
+}
+.icon-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    transition: .5s;
+}
+.icon:hover .icon-img{
+    transform: scale(1.2);
+}
+.icon-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.icon-con{
+    height: 60px;
+    margin-left: 20px;
+
+}
+.icon-con p{
+    padding-top: 5px;
+}
+.icon-con h2{
+    font-weight: 400;
+
+}
+/* 分割线 */
+.line{
+    width: 60px;
+    height: 1px;
+    background: rgba(245, 253, 255, 0.5);
+    margin: 20px 12px;
+    transition: 0.5s;
+}
+.nav:hover .line{
+    width: 230px;
+
+}
+/* 导航标题 */
+.title{
+    width: 60px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+}
+.title p{
+    font-size: 14px;
+
+}
+/* 导航内容 */
+.menu{
+    width: 230px;
+    /* margin-left: 25px; */
+}
+/* 导航区域选项 */
+.item{
+    display: flex;
+    position: relative;
+    transition: 0.5s;
+    border-radius: 6px;
+
+}
+.item:hover{
+    background:rgba(255, 255, 255, 0.1);
+}
+/* 导航图标 */
+.licon{
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 导航栏文字 */
+.con{
+    width: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    left: -20px;
+    opacity: 0;
+}
+.nav:hover .con{
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+/* 右边小图标 */
+.ricon{
+    width: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.nav:hover .ricon{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+.licon i{
+    font-size: 26px;
+}
+.ricon i{
+    font-size: 20px;
+    color: #62cb44;
+}
+/* 导航选项前的线条 */
+.light{
+    width: 6px;
+    height: 50px;
+    background: #eb5a56;
+    position: absolust;
+    left: -25px;
+    transition: 0.5s;
+    border-top-right-radius: 4px;
+    opacity: 0;
+}
+.item:hover .light{
+    opacity: 1;
+}
+
+
+
+/* 网页右边主内容区域 */
+main{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    opacity: 0.6;
+
+}
+
+
+/* 顶部导航栏 */
+nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* 左右padding */
+    padding: 0 5vw;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+.logo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #dadbdd;
+    /* 占一半宽度 */
+    flex: 1;
+}
+
+.nav-menu {
+    /* 占令一半宽度 */
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+
+    /* 最宽550px */
+    max-width: 550px;
+}
+
+.nav-menu li {
+    list-style: none;
+    color: #dadbdd;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.nav-menu li a{
+    display: block;
+    text-decoration: none;
+    color: #dadbdd;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+
+/* 悬浮于上方时颜色变浅 */
+.nav-menu li:hover{
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+
+.burger div {
+    /* 设置汉堡按钮三层条 */
+    width: 25px;
+    height: 3px;
+    background-color: #dadbdd;
+    margin: 4px;
+}
+
+.burger {
+    display: none;
+}
+
+/* 屏幕适配 */
+@media screen and (max-width: 768px) {
+.burger {
+    display: block;
+}
+
+nav{
+    width: 100vw;
+}
+
+/* 小屏幕菜单显示位置为右侧抽屉形式 */
+.nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    width: 30vw;
+    height: calc(100vh - 80px);
+
+    background-color: rgb(65, 81, 101, 0.9);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    /* 动画 */
+    transform: translateX(100%);
+}
+
+/* 菜单打开时，滑到初始位置 */
+.nav-menu.open {
+    transform: translateX(0);
+    transition: 0.4s ease-in-out;
+}
+
+/* 每个菜单项默认看不到，向右移动20象素 */
+.nav-menu li {
+    /* 上下间距 */
+    margin: 3vh;
+    transform: translateX(20px);
+    opacity: 0;
+    flex: none;
+    height: 45px;
+}
+
+/* 汉堡按钮被点开时，设置按钮过渡 */
+.burger.active div {
+    transition: 0.3s ease-in-out 0.3s;
+}
+
+/* 第一条线旋转45度 */
+.burger.active .top-line {
+    transform: rotate(45deg) translate(4px, 6px);
+}
+
+/* 第三条线旋转-45度 */
+.burger.active .bottom-line {
+    transform: rotate(-45deg) translate(4px, -6px);
+}
+
+/* 中间线向右移动并变为透明 */
+.burger.active .middle-line {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: 0.3s ease-in-out;
+}
+
+/* 菜单项滑入动画 */
+@keyframes slideIn {
+    from {
+    transform: translateX(20px);
+    opacity: 0;
+    }
+    to {
+    transform: translateX(0);
+    opacity: 1;
+    }
+}
+}
+
+
+/* 导航栏标签 */
+.wrapper{
+    /* 设置宽度为60%窗口宽度
+    width: 60vw; */
+    flex: 1;
+    width: 555px;
+    height: 26px;
+    line-height: 38px;
+    /* background-color: #fff; */
+    /* 盒子阴影 */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    border-radius: 50px;
+    margin-bottom: 6px;
+}
+.wrapper .nav-tab{
+    display: flex;
+    position: relative;
+}
+.wrapper .nav-tab label{
+    flex:1;
+    width:100%;
+    height: 40px;
+    position: relative;
+    z-index: 1;
+    /* 鼠标移动到上边变成小手 */
+    cursor: pointer;
+}
+.wrapper .nav-tab label a{
+    position: relative;
+    z-index: -1;
+    color: #333;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.wrapper .nav-tab label a i{
+    font-size: 20px;
+    margin: 0px 8px;
+    /* margin-left: 16px; */
+}
+.wrapper .nav-tab input{
+    display: none;
+}
+.wrapper .nav-tab .tab{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0px;
+    bottom: 0px;
+    /* 渐变背景 自左向右 */
+    background: linear-gradient(to right, #f09819, #ff5858);
+    border-radius: 50px;
+    /* 添加动画过渡 贝塞尔曲线 */
+    transition: 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.wrapper .nav-tab #home:checked ~ label.home a,
+.wrapper .nav-tab #comment:checked ~ label.comment a,
+.wrapper .nav-tab #envelope:checked ~ label.envelope a,
+.wrapper .nav-tab #heart:checked ~ label.heart a,
+.wrapper .nav-tab #user:checked ~ label.user a{
+    color: #fff;
+    /* 这里字体颜色改变也需要加个动画过渡 */
+    transition: 0.6s;
+}
+.wrapper .nav-tab #comment:checked ~ .tab{
+    left: 20%;
+}
+.wrapper .nav-tab #envelope:checked ~ .tab{
+    left: 40%;
+}
+.wrapper .nav-tab #heart:checked ~ .tab{
+    left: 60%;
+}
+.wrapper .nav-tab #user:checked ~ .tab{
+    left: 80%;
+}
+
+
+/* 内容区域 */
+article{
+    display: flex;
+    flex: 1;
+    /* 使内容区域独立滚动 */
+    overflow: auto;
+}
+
+/* 左边内容区 */
+.left-content{
+    display: flex;
+    flex-direction: column;
+    flex:3;
+    margin: 8px;
+
+}
+
+
+/* 轮播图 */
+.lunbo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 260px; */
+    box-sizing: border-box;
+    opacity: 0.8;
+}
+.div-carousel {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.div-carousel-imglist {
+    width: 100%;
+    position: relative;
+}
+.div-carousel-item {
+    width: 100%;
+    max-height: 100%;
+    position: absolute;
+    transition: .8s;
+}
+.div-carousel-item img {
+    max-width:100%;
+    height: 100%;
+   object-fit: cover;
+}
+
+.div-carousel-focus {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+.div-carousel-focus span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: #cccccc99;
+}
+.div-carousel-focus span:hover {
+    transform: scale(1.4);
+    border: 3px solid #ccc;
+    background-color: #fff;
+}
+.div-carousel-focus span.active {
+    transform: scale(1.5);
+    background: url(./img/active-img.png);
+    background-size: cover;
+}
+.div-carousel-focus span.active:hover {
+    border: none;
+}
+
+
+
+/* 数据区 */
+article .left-content .date-area{
+    display: flex;
+}
+/* 4个数据块 */
+article .left-content .date-area .panel{
+    flex: 1;
+    height: 72px;
+    margin-right: 8px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 每一个数据块 */
+article .left-content .date-area .panel:nth-child(1){
+    background-color: rgba(247, 131, 172, 0.5);
+    /* filter: blur(1); */
+}
+article .left-content .date-area .panel:nth-child(2){
+    background-color: rgba(77, 171, 247, 0.5);
+}
+article .left-content .date-area .panel:nth-child(3){
+    background-color: rgba(218, 119, 242, 0.5);
+}
+article .left-content .date-area .panel:nth-child(4){
+    background-color: rgba(105, 219, 124, 0.5);
+}
+.date-area .panel .in-panel img{
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+}
+.date-area .panel .panel-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* 列表区 */
+article .left-content .list-area{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+/* 列表面版 */
+article .left-content .list-area .list-panel{
+    height: 180px;
+    background-color: rgba(241, 243, 245, 0.6);
+    filter: blur(5);
+    margin-top: 8px;
+    /* resize: both; */
+    border-radius: 8px;
+    /* resize可以使面板自由放大缩小，使用要设置overflow 
+    resize: both;
+    overflow: hidden;*/
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.list-area .list-panel .inlist-panel{
+    margin-left: 45px;
+    width: 160px;
+    height: 150px;
+    overflow: hidden;
+}
+.list-area .list-panel .inlist-panel img{
+    width: 150px;
+    height: 150px;
+    margin: 6px;
+}
+.list-area .list-panel .inlist-text{
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+.list-area .list-panel .inlist-text strong{
+    font-size: 22px;
+}
+.list-area .list-panel .inlist-text p{
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+
+/* 右边内容区 */
+.right-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+/* 立体字时间显示 */
+.time-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    /* flex: 1; */
+    /* 背景色：白桃粉 */
+    background-color: #eacccc;
+    /* 禁止文本被选取 */
+    user-select: none;
+    border-radius: 35px;
+    margin-top: 12px;
+}
+.clock{
+    display: flex;
+}
+.clock p{
+    /* width: 95px; */
+    width: 16px;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    /* 设置字体 */
+    font-family: "Kanit";
+    font-weight: 400;
+    /* 文字阴影 实现3D效果 */
+    text-shadow: 0 1px 0 #deafaf,
+    0 2px 0 #bda8a8,
+    0 3px 0 #d8a1a1,
+    0 4px 0 #d59999,
+    0 5px 0 #d29292,
+    0 6px 0 #cf8b8b,
+    0 7px 0 #cc8484,
+    0 8px 0 #c97d7d,
+    0 0 5px rgba(231,156,156,0.05),
+    0 -1px 3px rgba(231,156,156,0.2),
+    0 9px 9px rgba(231,156,156,0.3),
+    0 12px 12px rgba(231,156,156,0.3),
+    0 15px 15px rgba(231,156,156,0.3);
+}
+
+/* 右区加载动画 */
+.donghua{
+    flex: 1;
+    /* 弹性布局 水平、垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #eef1f5; */
+}
+.loading{
+    display: flex;
+    /* 水平显示 */
+    flex-direction: row;
+}
+.loading div{
+    position: relative;
+    width: 18px;
+    height: 82px;
+    /* 渐变背景 */
+    background: linear-gradient(to bottom,rgba(0,0,0,0.05),#eef1f5);
+    margin: 10px;
+    border-radius: 20px;
+    border: 2px solid #eef1f5;
+    /* 阴影 */
+    box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+                -15px -15px 20px #fff,
+                inset -5px -5px 5px rgba(255,255,255,0.5),
+                inset 5px 5px 5px rgba(0,0,0,0.05);
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+.loading div::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 5px rgba(0,0,0,0.1),
+                0 420px 0 400px lightskyblue;
+    /* 执行动画：动画名称 时长 加速后减速 无限次播放 */
+    animation: animate 2s ease-in-out infinite;
+    /* 动画延迟 通过var函数获取自定义属性--x，再由calc函数计算得出每个元素的动画延迟时间 */
+    animation-delay: calc(var(--x) * -0.3s);
+    /* 初始化时先向上移动160px */
+    transform: translateY(160px);
+}
+
+/* 定义动画 */
+@keyframes animate{
+    0%{
+        transform: translateY(160px);
+        /* hue-rotate是颜色滤镜，可以设置不同的度数来改变颜色 */
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        transform: translateY(0px);
+        filter: hue-rotate(180deg);
+    }
+    100%{
+        transform: translateY(160px);
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+/* 提示区 */
+article .right-content .prompt{
+    height: 150px;
+    background-color: white;
+    margin-top: 8px;
+    border-radius: 8px;
+    /* resize: both;
+    overflow: hidden; */
+}
+/* 收藏问答 */
+.containers{
+    height: 150px;
+    background-color: #382f45;
+    border-radius: 8px;
+    /* 弹性布局 垂直排列 居中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 阴影 */
+    box-shadow: 10px 10px 20px rgba(77, 76, 76, 0.034);
+    padding: 0 15px;
+}
+.prompt .containers p{
+    width: 80%;
+    color: #fff;
+    font-size: 32x;
+    letter-spacing: 5px;
+}
+.input-box{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.input-box label{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1px;
+    color: #fff;
+    letter-spacing: 5px;
+}
+.input-box label span{
+    /* 相对定位 */
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    /* 设置过渡 */
+    transition: 0.5s;
+}
+.input-box label span::before{
+    content: "";
+    /* 绝对定位 */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    /* 通过阴影的方式绘制上边框 */
+    box-shadow: 0 -26px 0 #fff;
+    transition: 0.5s;
+}
+.input-box label span::after{
+    content: "";
+    /* 绝对定位 */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #fff;
+    /* 通过阴影的方式绘制右边框 */
+    box-shadow: 26px 0 0 #fff;
+    transition: 0.5s;
+}
+/* 选中"必须滴"的图形变化 */
+.input-box label input:checked ~ span.yes::before{
+    background-color: #0f0;
+    box-shadow: none;
+}
+.input-box label input:checked ~ span.yes::after{
+    background-color: #0f0;
+    box-shadow: none;
+    height: 55%;
+}
+.input-box label input:checked ~ span.yes{
+    transform: rotate(-45deg) translate(2px,-10px);
+}
+/* 选中"下次一定"的图形变化 */
+.input-box label input:checked ~ span.no::before{
+    background-color: #f00;
+    box-shadow: none;
+    transform: rotate(-45deg) translate(7px,-8px);
+}
+.input-box label input:checked ~ span.no::after{
+    background-color: #f00;
+    box-shadow: none;
+    transform: rotate(-45deg) translate(7px,11px);
+}
+.input-box input{
+    display: none;
+}
+
+
+/* 消息区 */
+article .right-content .message{
+    height: 260px;
+    /* background-color: white; */
+    /* margin-top: 8px; */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+article .right-content .message img{
+    /* max-width: 100%;
+    max-height: 100%; */
+    width: 200px;
+    height: 200px;
+}
+
+/* 取消页面滚动条 */
+article::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
+
+
+
+/* 右上角搜索框 */
+.search-box{
+    /* 绝对定位 水平垂直居中 */
+    position: absolute;
+    top: 15%;
+    right: 3%;
+    transform: translate(-50%,-50%);
+    background-color: #2f3640;
+    height: 45px;
+    padding: 2px;
+    border-radius: 40px;
+    z-index: 2;
+    opacity: 0.6;
+}
+.search-box form{
+    display: inline-block;
+}
+.search-txt{
+    border:none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    width: 0;
+    /* 动画过渡 */
+    transition: 1.2s;
+}
+.search-btn{
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2f3640;
+    /* 弹性布局 水平垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 0.4s;
+}
+.search-box:hover .search-txt{
+    width: 160px;
+    padding: 0 6px;
+    opacity: 1;
+}
+.search-box:hover .search-btn{
+    background-color: #fff;
+}
+
+
+/* 右下角快捷菜单图标 */
+.menu-box{
+    /* 固定定位 右下角 */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+/* 菜单按钮 */
+.menu-button{
+    width: 50px;
+    height: 50px;
+    background-color: #5c67ff;
+    border-radius: 50%;
+    /* 投影 */
+    box-shadow: 0 0 0 4px rgba(92,103,255,0.3);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    /* 过渡 */
+    transition: 0.2s ease-in;
+}
+.menu-button:hover{
+    background-color: #4854ff;
+    box-shadow: 0 0 0 8px rgba(92,103,255,0.3);
+}
+.menu-button .line-box{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
+}
+/* 菜单按钮图标（三条杠） */
+.menu-button .line{
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+}
+/* 前后两条短，中间的长 */
+.menu-button .line:first-child{
+    width: 50%;
+    /* 设置变换的基点 */
+    transform-origin: right;
+    /* 过渡效果 */
+    transition: transform 0.3s ease-in-out;
+}
+.menu-button .line:last-child{
+    width: 50%;
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+/* 菜单列表 */
+.menu-list{
+    width: 120px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 8px;
+    list-style: none;
+    padding: 6px;
+    box-shadow: 0 0 4px 4px rgba(92,103,255,0.15);
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    /* 默认隐藏 */
+    opacity: 0;
+    transform: scale(0);
+    /* 设置变换的基点 */
+    transform-origin: bottom right;
+    /* 过渡效果 */
+    transition: 0.3s ease;
+    /* 过渡延迟 */
+    transition-delay: 0.1s;
+}
+/* 菜单项 */
+.menu-list li{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #1c3991;
+    cursor: pointer;
+    position: relative;
+    /* 默认隐藏 */
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.2s ease-in;
+}
+.menu-list li:hover{
+    color: #5c67ff;
+}
+/* 菜单项下边框 */
+.menu-list li::before{
+    content: "";
+    width: calc(100% - 24px);
+    height: 1px;
+    background-color: rgba(92,103,255,0.1);
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+}
+/* 最后一项不用下边框 */
+.menu-list li:last-child::before{
+    display: none;
+}
+/* 菜单项图标 */
+.menu-list .fa{
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 菜单项文本 */
+.menu-list span{
+    font-size: 14px;
+    margin-left: 8px;
+}
+/* 活动态下的部分样式变化 */
+/* 三条杠的变化 */
+.actives .line-box{
+    transform: rotate(-45deg);
+}
+.actives .line-box .line:first-child{
+    transform: rotate(-90deg) translateX(1px);
+}
+.actives .line-box .line:last-child{
+    transform: rotate(-90deg) translateX(-1px);
+}
+/* 菜单列表的变化 */
+.actives .menu-list{
+    opacity: 1;
+    transform: scale(1);
+}
+.actives .menu-list li{
+    /* 执行动画：动画名 时长 线性 停留在最后一帧 */
+    animation: fade-in-item 0.4s linear forwards;
+}
+/* 接下来为每一项设置动画延迟时间 */
+.actives .menu-list li:nth-child(1){
+    animation-delay: 0.1s;
+}
+.actives .menu-list li:nth-child(2){
+    animation-delay: 0.2s;
+}
+.actives .menu-list li:nth-child(3){
+    animation-delay: 0.3s;
+}
+.actives .menu-list li:nth-child(4){
+    animation-delay: 0.4s;
+}
+
+/* 定义动画 */
+@keyframes fade-in-item {
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* 多媒体自适应 */
+/* 当屏幕宽度小于600px时要改变的css */
+@media (max-width: 600px) {
+    aside{
+        display: none;
+    }
+    article{
+        flex-direction: column;
+        width: 100vw;
+    }
+    article .left-content .date-area{
+        flex-direction: column;
+    }
+    .right-content{
+        margin-left: 8px;
+    }
+    article .left-content .date-area .panel{
+        margin: 0 0 8px;
+        flex: auto;
+    }
+    /* 右侧菜单按钮 */
+    .menu-button{
+        /* display: none; */
+        width: 42px;
+        height: 42px;    
+    }
+    /* 菜单列表 */
+    .menu-list{
+        width: 120px;
+        height: 160px;
+    }
+    /* 导航栏标签 */
+    .wrapper{
+        width: 92vw;
+    }
+    /* 右上角搜索框 */
+    .search-box{
+        display: none;
+    }
+    /* 加载动画 */
+    .donghua{
+        display: none;
+    }
+}
