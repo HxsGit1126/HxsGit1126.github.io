@@ -1,0 +1,738 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: 1px solid black; 布局页面辅助*/
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    min-width: 1000px;
+    height: 100vh;
+    /* background-image: url("./img/background.jpg"); */
+    background-color: #dadbdd;
+    background-repeat: no-repeat;
+    /* 背景图片覆盖满页面 */
+    background-size: cover;
+}
+
+/* 网页布局 */
+.content{
+    display: flex;
+    /* vh 是view height 既视窗高度的意思，100就是100%占满窗口高度 */
+    height: 100vh;
+    /* flex-direction: row; 默认按行分布*/
+    opacity: 1;/*网页全部属性的不透明度*/
+}
+
+
+/* 侧边栏 */
+aside{
+    /* width: 100%;
+    height: 100vh; */
+    /* background: url(../img/bizhi\ \(1\).jpg) center;
+    background-repeat: no-repeat; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    color: rgba(255, 255, 255, 0.6);
+    background-size: cover;
+    opacity: 0.9;
+}
+.nav{
+    width: 92px;
+    height: 100vh;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.nav:hover{
+    width: 240px;
+}
+
+/* 三个不同颜色的小按钮 */
+/* .btn{
+    width: 60px;
+    height: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.btn-item{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.btn-item:nth-child(1){
+    background-color: red;
+}
+.btn-item:nth-child(2){
+    background-color: green;
+}
+.btn-item:nth-child(3){
+    background-color: blue;
+} */
+
+/* 头像区域 */
+.icon{
+    width: 250px;
+    height: 60px;
+    margin-left: 12px;
+    margin-top: 20px;
+    display: flex;
+
+}
+.icon-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    transition: .5s;
+}
+.icon:hover .icon-img{
+    transform: scale(1.2);
+}
+.icon-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.icon-con{
+    height: 60px;
+    margin-left: 20px;
+
+}
+.icon-con p{
+    padding-top: 5px;
+}
+.icon-con h2{
+    font-weight: 400;
+
+}
+/* 分割线 */
+.line{
+    width: 60px;
+    height: 1px;
+    background: rgba(245, 253, 255, 0.5);
+    margin: 20px 12px;
+    transition: 0.5s;
+}
+.nav:hover .line{
+    width: 230px;
+
+}
+/* 导航标题 */
+.title{
+    width: 60px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+}
+.title p{
+    font-size: 14px;
+
+}
+/* 导航内容 */
+.menu{
+    width: 230px;
+    /* margin-left: 25px; */
+}
+/* 导航区域选项 */
+.item{
+    display: flex;
+    position: relative;
+    transition: 0.5s;
+    border-radius: 6px;
+
+}
+.item:hover{
+    background:rgba(255, 255, 255, 0.1);
+}
+/* 导航图标 */
+.licon{
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 导航栏文字 */
+.con{
+    width: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    left: -20px;
+    opacity: 0;
+}
+.nav:hover .con{
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+/* 右边小图标 */
+.ricon{
+    width: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+}
+.nav:hover .ricon{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+.licon i{
+    font-size: 26px;
+}
+.ricon i{
+    font-size: 20px;
+    color: #62cb44;
+}
+/* 导航选项前的线条 */
+.light{
+    width: 6px;
+    height: 50px;
+    background: #eb5a56;
+    position: absolust;
+    left: -25px;
+    transition: 0.5s;
+    border-top-right-radius: 4px;
+    opacity: 0;
+}
+.item:hover .light{
+    opacity: 1;
+}
+
+
+
+/* 网页右边主内容区域 */
+main{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    opacity: 0.6;
+
+}
+
+
+/* 顶部导航栏 */
+nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* 左右padding */
+    padding: 0 5vw;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.logo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #dadbdd;
+    /* 占一半宽度 */
+    flex: 1;
+}
+
+.nav-menu {
+    /* 占令一半宽度 */
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+
+    /* 最宽550px */
+    max-width: 550px;
+}
+
+.nav-menu li {
+    list-style: none;
+    color: #dadbdd;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.nav-menu li a{
+    display: block;
+    text-decoration: none;
+    color: #dadbdd;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+/* 悬浮于上方时颜色变浅 */
+.nav-menu li:hover{
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+
+.burger div {
+    /* 设置汉堡按钮三层条 */
+    width: 25px;
+    height: 3px;
+    background-color: #dadbdd;
+    margin: 4px;
+}
+
+.burger {
+    display: none;
+}
+
+/* 屏幕适配 */
+@media screen and (max-width: 768px) {
+.burger {
+    display: block;
+}
+
+nav{
+    width: 100vw;/*实现网页缩小自适应，汉堡按钮三层条才能正常显示*/
+}
+
+/* 小屏幕菜单显示位置为右侧抽屉形式 */
+.nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    width: 30vw;
+    height: calc(100vh - 80px);
+
+    background-color: rgb(65, 81, 101, 0.9);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    /* 动画 */
+    transform: translateX(100%);
+}
+
+/* 菜单打开时，滑到初始位置 */
+.nav-menu.open {
+    transform: translateX(0);
+    transition: 0.4s ease-in-out;
+}
+
+/* 每个菜单项默认看不到，向右移动20象素 */
+.nav-menu li {
+    /* 上下间距 */
+    margin: 3vh;
+    transform: translateX(20px);
+    opacity: 0;
+    flex: none;
+    height: 45px;
+}
+
+/* 汉堡按钮被点开时，设置按钮过渡 */
+.burger.active div {
+    transition: 0.3s ease-in-out 0.3s;
+}
+
+/* 第一条线旋转45度 */
+.burger.active .top-line {
+    transform: rotate(45deg) translate(4px, 6px);
+}
+
+/* 第三条线旋转-45度 */
+.burger.active .bottom-line {
+    transform: rotate(-45deg) translate(4px, -6px);
+}
+
+/* 中间线向右移动并变为透明 */
+.burger.active .middle-line {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: 0.3s ease-in-out;
+}
+
+/* 菜单项滑入动画 */
+@keyframes slideIn {
+    from {
+    transform: translateX(20px);
+    opacity: 0;
+    }
+    to {
+    transform: translateX(0);
+    opacity: 1;
+    }
+}
+}
+
+
+
+/* 内容区域 */
+article{
+    display: flex;
+    flex: 1;
+    /* 使内容区域独立滚动 */
+    overflow: auto;
+}
+/* 左边内容区 */
+.left-content{
+    display: flex;
+    flex-direction: column;
+    flex:3;
+    margin: 8px;
+
+}
+/* 数据区 */
+article .left-content .date-area{
+    display: flex;
+}
+/* 4个数据块 */
+article .left-content .date-area .panel{
+    flex: 1;
+    height: 72px;
+    margin-right: 8px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* 列表区 */
+article .left-content .list-area{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+/* 列表标题 */
+.title-box{
+    margin: 5px;
+    display: flex;
+}
+.title-box .title-line{
+    width: 6px;
+    height: 26px;
+    color: #74a7d8;
+    background-color: #74a7d8;
+    margin:0px 10px;
+}
+.title-box .title-line h3{
+    margin-left: 6px;
+    color: #74a7d8;
+    text-align: center;
+    justify-content: center;
+}
+/* 列表面版 */
+article .left-content .list-area .list-panel{
+    /* height: 180px; */
+    max-height: 600px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.555);
+    margin-top: 8px;
+    resize: both;
+    border-radius: 8px;
+    /* 声明一个容器 */
+    display: grid;
+    padding: 16px;
+    /*  声明行间距和列间距  */
+    grid-gap: 12px;
+    /*  声明列的宽度  */
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+}
+
+article .left-content .list-area .list-panel .labal-panel{
+    /* border: 2px solid #666; */
+    padding: 10px;
+    text-align: center;
+    /* background-color: rgba(107, 169, 223, 0.826); */
+    background-color: #e0e0e0;
+    border-radius: 16px;
+    background: #e0e0e0;
+    box-shadow:  6px 6px 10px #f8e0f6c5,
+             -6px -6px 10px #aabedbea;
+    height: 62px;
+    width: 160px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+article .left-content .list-area .list-panel .labal-panel:hover{
+    border-radius: 16px;
+    background: #e0e0e0;
+    box-shadow: inset 6px 6px 10px #74a7d8,
+            inset -6px -6px 10px #ed90dad3;
+}
+
+.list-panel .labal-panel .matter{
+    flex-basis: 25%;
+}
+
+article .left-content .list-area .list-panel .labal-panel a{
+    display: flex;
+    /* flex-direction: column; */
+    text-decoration: none;
+}
+article .left-content .list-area .list-panel .labal-panel a .line{
+    width: 2px;
+    height: 43px;
+    color: wheat;
+    border: 1px solid rgba(248, 246, 243, 0.648);
+    margin:2px 10px;
+}
+article .left-content .list-area .list-panel .labal-panel a strong{
+    color: black;
+    margin-left: 8px;
+    text-align: center;
+    margin: auto;
+    height: 100%;
+}
+
+/* 右边内容区 */
+.right-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+/* 提示区 */
+article .right-content .prompt{
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 8px;
+    border-radius: 8px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+.right-content .prompt img{
+    width: 16vw;
+    height: 13vh;
+}
+/* 消息区 */
+article .right-content .message{
+    height: 260px;
+    background-color: white;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+
+/* 取消页面滚动条 */
+article::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
+
+
+
+/* 右下角快捷菜单图标 */
+.menu-box{
+    /* 固定定位 右下角 */
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+/* 菜单按钮 */
+.menu-button{
+    width: 50px;
+    height: 50px;
+    background-color: #5c67ff;
+    border-radius: 50%;
+    /* 投影 */
+    box-shadow: 0 0 0 4px rgba(92,103,255,0.3);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    /* 过渡 */
+    transition: 0.2s ease-in;
+}
+.menu-button:hover{
+    background-color: #4854ff;
+    box-shadow: 0 0 0 8px rgba(92,103,255,0.3);
+}
+.menu-button .line-box{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
+}
+/* 菜单按钮图标（三条杠） */
+.menu-button .line{
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+}
+/* 前后两条短，中间的长 */
+.menu-button .line:first-child{
+    width: 50%;
+    /* 设置变换的基点 */
+    transform-origin: right;
+    /* 过渡效果 */
+    transition: transform 0.3s ease-in-out;
+}
+.menu-button .line:last-child{
+    width: 50%;
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+/* 菜单列表 */
+.menu-list{
+    width: 120px;
+    height: 160px;
+    background-color: #fff;
+    border-radius: 8px;
+    list-style: none;
+    padding: 6px;
+    box-shadow: 0 0 4px 4px rgba(92,103,255,0.15);
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    /* 默认隐藏 */
+    opacity: 0;
+    transform: scale(0);
+    /* 设置变换的基点 */
+    transform-origin: bottom right;
+    /* 过渡效果 */
+    transition: 0.3s ease;
+    /* 过渡延迟 */
+    transition-delay: 0.1s;
+}
+/* 菜单项 */
+.menu-list li{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #1c3991;
+    cursor: pointer;
+    position: relative;
+    /* 默认隐藏 */
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: 0.2s ease-in;
+}
+.menu-list li:hover{
+    color: #5c67ff;
+}
+/* 菜单项下边框 */
+.menu-list li::before{
+    content: "";
+    width: calc(100% - 24px);
+    height: 1px;
+    background-color: rgba(92,103,255,0.1);
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+}
+/* 最后一项不用下边框 */
+.menu-list li:last-child::before{
+    display: none;
+}
+/* 菜单项图标 */
+.menu-list .fa{
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 菜单项文本 */
+.menu-list span{
+    font-size: 14px;
+    margin-left: 8px;
+}
+/* 活动态下的部分样式变化 */
+/* 三条杠的变化 */
+.actives .line-box{
+    transform: rotate(-45deg);
+}
+.actives .line-box .line:first-child{
+    transform: rotate(-90deg) translateX(1px);
+}
+.actives .line-box .line:last-child{
+    transform: rotate(-90deg) translateX(-1px);
+}
+/* 菜单列表的变化 */
+.actives .menu-list{
+    opacity: 1;
+    transform: scale(1);
+}
+.actives .menu-list li{
+    /* 执行动画：动画名 时长 线性 停留在最后一帧 */
+    animation: fade-in-item 0.4s linear forwards;
+}
+/* 接下来为每一项设置动画延迟时间 */
+.actives .menu-list li:nth-child(1){
+    animation-delay: 0.1s;
+}
+.actives .menu-list li:nth-child(2){
+    animation-delay: 0.2s;
+}
+.actives .menu-list li:nth-child(3){
+    animation-delay: 0.3s;
+}
+.actives .menu-list li:nth-child(4){
+    animation-delay: 0.4s;
+}
+
+/* 定义动画 */
+@keyframes fade-in-item {
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* 多媒体自适应 */
+/* 当屏幕宽度小于600px时要改变的css */
+@media (max-width: 600px) {
+    aside{
+        display: none;
+    }
+    article{
+        flex-direction: column;
+        width: 100vw;
+    }
+    article .left-content .date-area{
+        flex-direction: column;
+    }
+    .right-content{
+        margin-left: 8px;
+    }
+    article .left-content .date-area .panel{
+        margin: 0 0 8px;
+        flex: auto;
+    }
+    /* 右侧菜单按钮 */
+    .menu-button{
+        /* display: none; */
+        width: 42px;
+        height: 42px;    
+    }
+    /* 菜单列表 */
+    .menu-list{
+        width: 120px;
+        height: 160px;
+    }
+}
